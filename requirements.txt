@@ -1,3 +1,2 @@
 streamlit
-os == 3.12
 langchain
