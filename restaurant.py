@@ -28,12 +28,23 @@ def generate_rest_name_items(cuisine):
 
   chain = SimpleSequentialChain(chains = [name_chain, food_chain])
 
+  # chain = SequentialChain(
+  #   chains = ['restau_name', 'menu_items'],
+  #   input_variables = ['cuisine'],
+  #   output_variables=['restaurant_name', 'menu_items']
+  # )
+  # response = chain({'cuisine':cuisine})
+
+  from langchain.chains import SequentialChain
+
   chain = SequentialChain(
-    chains = ['restau_name', 'menu_items'],
+    chains = [name_chain, food_chain],
     input_variables = ['cuisine'],
-    output_variables=['restaurant_name', 'menu_items']
+    output_variables=['restau_name', 'menu_items']
   )
-  response = chain({'cuisine':cuisine})
+
+  chain({'cuisine':'Indian'})
+  
   return response
 
 if __name__ == "__main__":
