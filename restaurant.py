@@ -26,7 +26,7 @@ def generate_rest_name_items(cuisine):
   )
   food_chain = LLMChain(llm=llm, prompt=prompt_template_items, output_key='menu_items')
 
-  chain = SimpleSequentialChain(chains = [name_chain, food_chain])
+  # chain = SimpleSequentialChain(chains = [name_chain, food_chain])
 
   # chain = SequentialChain(
   #   chains = ['restau_name', 'menu_items'],
@@ -49,7 +49,7 @@ def generate_rest_name_items(cuisine):
 
 if __name__ == "__main__":
   response = generate_rest_name_items("Italian")
-  st.header(response["restaurant_name"])
+  st.header(response["restau_name"])
   menu_items = response['menu_items'].split(',')
   st.write("--Menu Items--")
   
