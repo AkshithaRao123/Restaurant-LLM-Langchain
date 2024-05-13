@@ -43,7 +43,7 @@ def generate_rest_name_items(cuisine):
     output_variables=['restau_name', 'menu_items']
   )
 
-  response = chain({'cuisine':'Indian'})
+  response = chain({'cuisine':cuisine})
   
   return response
 
