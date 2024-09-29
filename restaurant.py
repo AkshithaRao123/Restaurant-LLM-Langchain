@@ -21,7 +21,7 @@ def generate_rest_name_items(cuisine):
 
   prompt_template_items = PromptTemplate(
     input_variables = ['restau_name'],
-    template = 'Suggest some menu items for {restau_name}. Return it as comma separated values.'
+    template = 'Suggest some menu items for {restau_name}. Return it as comma separated values. Return only the names of food items, nothing else.'
   )
   food_chain = LLMChain(llm=llm, prompt=prompt_template_items, output_key='menu_items')
 
