@@ -6,7 +6,6 @@ from langchain.chains import SimpleSequentialChain
 from langchain.chains import SequentialChain
 
 import os
-os.environ["COHERE_API_KEY"] = "M8ELpOX9YoF6xeDgg3bx7DIeUcbMO9yUD1IwH5gM"
 
 st.title("Restaurant Name Generator")
 
