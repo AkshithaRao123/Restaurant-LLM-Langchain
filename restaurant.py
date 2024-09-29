@@ -47,7 +47,7 @@ def generate_rest_name_items(cuisine):
   return response
 
 if __name__ == "__main__":
-  response = generate_rest_name_items("Italian")
+  response = generate_rest_name_items(cuisine)
   st.header(response["restau_name"])
   menu_items = response['menu_items'].split(',')
   st.write("--Menu Items--")
