@@ -1,3 +1,4 @@
 streamlit
 langchain
 cohere
+langchain_community
