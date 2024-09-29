@@ -15,7 +15,7 @@ def generate_rest_name_items(cuisine):
   llm = Cohere(temperature=0.7)
   prompt_template_name = PromptTemplate(
     input_variables = ['cuisine'],
-    template = 'I want to open a restaurant for {cuisine} food. Suggest a fancy name for this.'
+    template = 'I want to open a restaurant for {cuisine} food. Suggest a fancy name for this. Only the name without any explanation.'
   )
   name_chain = LLMChain(llm=llm, prompt=prompt_template_name, output_key='restau_name')
 
